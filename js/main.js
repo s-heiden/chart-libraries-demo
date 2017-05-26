@@ -1,4 +1,5 @@
 google.charts.load('current', {packages: ['corechart']});
+
 google.charts.setOnLoadCallback(drawGoogleColumns);
 google.charts.setOnLoadCallback(drawGoogleLines);
 google.charts.setOnLoadCallback(drawGooglePie);
@@ -18,16 +19,14 @@ function drawGoogleColumns() {
 
     var options = {
         title: 'Verkaufsübersicht für Ticketpartner',
-        width: 800,
-        height: 600,
-        legend: { position: 'bottom', maxLines: 3 },
-        bar: { groupWidth: '75%' },
+        legend: { position: 'bottom'},
         isStacked: true,
+        height:450
     };
 
     // Instantiate and draw the chart.
-    var googleColumnsChart = new google.visualization.ColumnChart(document.getElementById('googleColumns'));
-    googleColumnsChart.draw(data, options);
+    var chart = new google.visualization.ColumnChart(document.getElementById('googleColumns'));
+    chart.draw(data, options);
 }
 
 function drawGoogleLines() {
@@ -49,9 +48,8 @@ function drawGoogleLines() {
 
     var options = {
         title: 'Umsatzentwicklung pro Filiale',
-        width: 800,
-        height: 600,
-        legend: { position: 'bottom', maxLines: 3 },
+        legend: { position: 'bottom'},
+        height:450
     };
 
     var chart = new google.visualization.LineChart(document.getElementById('googleLines'));
@@ -72,13 +70,52 @@ function drawGooglePie() {
 
     var options = {
         title: 'Radio-Marktanteile 2015/16',
-        width: 800,
-        height: 600,
         is3D: true,
         legend: { position: 'bottom'},
+        height:600
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('googlePie'));
 
     chart.draw(data, options);
 }
+
+$(window).resize(function(){
+    drawGoogleColumns();
+    drawGoogleLines();
+    drawGooglePie();
+});
+
+window.on
+
+/**********************************************************************************************************************/
+
+window.onload = function() {
+    drawChartistColumns();
+    drawChartistLines();
+    drawChartistPie();
+};
+
+function drawChartistColumns(){
+    var data = {
+        labels: ['November', 'Dezember', 'Januar', 'Februar', 'März', 'April', 'Mai'],
+        series: [
+            { "data": [96,55,47,51,56,67,53] },
+            { "data": [61,37,36,28,34,48,31] }
+        ]
+    };
+
+    var options = {
+        stackBars: true
+
+    }
+
+    new Chartist.Bar('#chartistColumns', data, options).on('draw', function(data) {
+        if(data.type === 'bar') {
+            data.element.attr({
+                style: 'stroke-width: 30px'
+            });
+        }
+    });
+}
+

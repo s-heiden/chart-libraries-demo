@@ -2,3 +2,32 @@
     margin-top: 100px;
     margin-bottom:100px;
 }
+
+.ct-label {
+    font-size: 14px !important;
+}
+
+.googleChart{
+    width: 100%;
+    heigth: 600px;
+}
+
+.my-legend{
+    width: 20px;
+    height: 20px;
+
+}
+
+.red {
+    display: inline-block;
+    background-color: #d70206;
+}
+
+.light-red {
+    display: inline-block;
+    background-color: #f05b4f;
+}
+
+.my-legend-text {
+    color: rgb(215, 215, 215);
+}
