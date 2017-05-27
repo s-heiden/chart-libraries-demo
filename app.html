@@ -12,38 +12,47 @@
     <!--Chartist-->
     <link rel="stylesheet" href="node_modules/chartist/dist/chartist.min.css">
 
+
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
 
         <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-                <h2>Google Charts</h2>
-                <div id="googleColumns" class="googleChart"></div>
-                <hr class="separator">
+            <h2>Google Charts</h2>
+            <p>Zu beachten: Google Charts unterstützt selbst keine Responsiveness, dies ist nur durch das Wrappen in ein DIV und eine JQuery-Funktion umsetzbar, die den Graph bei jeder Fensteränderung neu zeichnet (siehe auch <a href="https://codepen.io/flopreynat/pen/BfLkA">Make Google Charts Responsive - CodePen</a>):</p>
+            <pre>$(window).resize(function () {<br>  drawChart();<br>});
+            </pre>
+            <div id="googleColumns" class="googleChart"></div>
+            <hr class="separator">
         </div>
 
         <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-                <div id="googleLines" class="googleChart"></div>
-                <hr class="separator">
+            <div id="googleLines" class="googleChart"></div>
+            <hr class="separator">
         </div>
 
         <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-                <div id="googlePie" class="googleChart"></div>
-                <hr class="separator">
+            <div id="googlePie" class="googleChart"></div>
+            <hr class="separator">
         </div>
 
         <div id="chartistCharts">
 
             <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
                 <h2>Chartist</h2>
+                <p>Zu beachten: Ohne Drittanbieter-Plugins sind Überschriften, Annotations und Legenden nicht verwendbar und müssen durch den Anwender ergänzt werden.</p>
                 <div id="chartistColumns" class="ct-perfect-fourth"></div>
-                <div class="row">
+                <!--<div class="row">
                     <div class="col-sm-6 col-sm-offset-3 text-center">
-                        <p class="my-legend-text"><div class="my-legend red"></div> Vollpreis</p>
-                        <p class="my-legend-text"><div class="my-legend light-red"></div> Ermäßigt</p>
+                        <p class="my-legend-text">
+                        <div class="my-legend red"></div>
+                        Vollpreis</p>
+                        <p class="my-legend-text">
+                        <div class="my-legend light-red"></div>
+                        Ermäßigt</p>
                     </div>
-                </div>
+                </div>-->
                 <hr class="separator">
             </div>
 
@@ -59,16 +68,24 @@
 
         </div>
 
-            <!--<h2>Chart.js</h2>-->
-            <!--<div id="chartJsColumns"></div>-->
-            <!--<hr class="separator">-->
-            <!--<div id="chartJsLines"></div>-->
-            <!--<hr class="separator">-->
-            <!--<div id="chartJsPie"></div>-->
-            <!--<hr class="separator">-->
+        <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <h2>Chart.JS</h2>
+            <canvas id="chartJsColumns"></canvas>
+            <hr class="separator">
         </div>
-        <hr class="separator">
+
+        <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <canvas id="chartJsLines"></canvas>
+            <hr class="separator">
+        </div>
+
+        <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <canvas id="chartJsPie"></canvas>
+            <hr class="separator">
+        </div>
+    </div>
 </div>
+<script src="node_modules/chart.js/dist/Chart.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="node_modules/chartist/dist/chartist.min.js"></script>
