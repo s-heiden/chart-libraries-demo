@@ -112,8 +112,12 @@ function drawChartistColumns() {
     };
 
     var options = {
-        stackBars: true
-
+        stackBars: true,
+        axisX: {
+            labelInterpolationFnc: function(value, index) {
+                return index % 2 === 0 ? value : null;
+            }
+        }
     }
 
     new Chartist.Bar('#chartistColumns', data, options).on('draw', function (data) {
@@ -134,7 +138,16 @@ function drawChartistLines() {
         ]
     };
 
-    new Chartist.Line('#chartistLines', data);
+    var options = {
+        lineSmooth: Chartist.Interpolation.none(),
+        axisX: {
+            labelInterpolationFnc: function(value, index) {
+                return index % 2 === 0 ? value : null;
+            }
+        }
+    };
+
+    new Chartist.Line('#chartistLines', data, options);
 }
 
 function drawChartistPie() {

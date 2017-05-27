@@ -20,7 +20,9 @@
 
         <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
             <h2>Google Charts</h2>
-            <p>Zu beachten: Google Charts unterstützt selbst keine Responsiveness, dies ist nur durch das Wrappen in ein DIV und eine JQuery-Funktion umsetzbar, die den Graph bei jeder Fensteränderung neu zeichnet (siehe auch <a href="https://codepen.io/flopreynat/pen/BfLkA">Make Google Charts Responsive - CodePen</a>):</p>
+            <p>Zu beachten: Google Charts unterstützt selbst keine Responsiveness, dies ist nur durch das Wrappen in ein
+                DIV und eine JQuery-Funktion umsetzbar, die den Graph bei jeder Fensteränderung neu zeichnet (siehe auch
+                <a href="https://codepen.io/flopreynat/pen/BfLkA">Make Google Charts Responsive - CodePen</a>):</p>
             <pre>$(window).resize(function () {<br>  drawChart();<br>});
             </pre>
             <div id="googleColumns" class="googleChart"></div>
@@ -41,7 +43,8 @@
 
             <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
                 <h2>Chartist</h2>
-                <p>Zu beachten: Ohne Drittanbieter-Plugins sind Überschriften, Annotations und Legenden nicht verwendbar und müssen durch den Anwender ergänzt werden.</p>
+                <p>Zu beachten: Ohne Drittanbieter-Plugins sind Überschriften, Annotations und Legenden nicht verwendbar
+                    und müssen durch den Anwender ergänzt werden.</p>
                 <div id="chartistColumns" class="ct-perfect-fourth"></div>
                 <!--<div class="row">
                     <div class="col-sm-6 col-sm-offset-3 text-center">
@@ -70,17 +73,24 @@
 
         <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
             <h2>Chart.JS</h2>
-            <canvas id="chartJsColumns"></canvas>
+            <p>Zu beachten: Die Charts skalieren in der Höhe zu stark, sodass sie irgendwann (z.B. Portrait-Mode bei iPhone 5) unlesbar werden. Dieser Umstand ist der Community <a href="https://github.com/chartjs/Chart.js/issues/56">bekannt.</a></p>
+            <div class="chart-js-chart">
+                <canvas id="chartJsColumns"></canvas>
+            </div>
             <hr class="separator">
         </div>
 
         <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-            <canvas id="chartJsLines"></canvas>
+            <div class="chart-js-chart">
+                <canvas id="chartJsLines"></canvas>
+            </div>
             <hr class="separator">
         </div>
 
         <div class="col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-            <canvas id="chartJsPie"></canvas>
+            <div class="chart-js-chart">
+                <canvas id="chartJsPie"></canvas>
+            </div>
             <hr class="separator">
         </div>
     </div>

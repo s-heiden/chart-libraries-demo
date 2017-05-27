@@ -15,7 +15,6 @@
 .my-legend{
     width: 20px;
     height: 20px;
-
 }
 
 .red {
@@ -30,4 +29,8 @@
 
 .my-legend-text {
     color: rgb(215, 215, 215);
+}
+
+.chart-js-chart {
+    min-height: 600px;
 }
