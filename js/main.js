@@ -100,8 +100,8 @@ function drawChartistColumns(){
     var data = {
         labels: ['November', 'Dezember', 'Januar', 'Februar', 'März', 'April', 'Mai'],
         series: [
-            { "data": [96,55,47,51,56,67,53] },
-            { "data": [61,37,36,28,34,48,31] }
+            [96,55,47,51,56,67,53],
+            [61,37,36,28,34,48,31]
         ]
     };
 
@@ -118,4 +118,27 @@ function drawChartistColumns(){
         }
     });
 }
+function drawChartistLines(){
+    var data = {
+        labels: ['Q1, 2015','Q2, 2015','Q3, 2015','Q4, 2015','Q1, 2016','Q2, 2016','Q3, 2016','Q4, 2016','Q1, 2017','Q2, 2017','Q3, 2017','Q4, 2017'],
+        series: [
+            [43.1,41.5,47.8,87.3,57.3,54.1,67.1,94.3,78.1,74.1,69.9,89.3],
+            [31.7,30.9,30.4,46.4,39.8,37.4,51.9,60.6,54.2,50.1,56.7,62.8],
+            [29.8,31.3,33.5,37.2,35.2,34.7,36.2,46.3,41.7,38.9,35.4,38.4]
+        ]
+    };
 
+    new Chartist.Line('#chartistLines', data);
+}
+
+function drawChartistPie(){
+    var data = {
+        labels: ['ORF-Regionalradios','FM4','Ö1','Kronehit','Ö3','Sonstige Privatradios'],
+        series: [33,2,5,8,30,22]
+
+    };
+
+    new Chartist.Pie('#chartistPie', data);
+}
+
+/**********************************************************************************************************************/
